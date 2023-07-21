@@ -102,11 +102,11 @@ public class LoginStepDefinition {
 	}
 
 	@Then("User navigates to MyAccount Page")
-	public void user_navigates_to_my_account_page() throws InterruptedException {
+	public void user_navigates_to_my_account_page() {
 		myAccountPage = new MyAccountPage(driver);
-		boolean logoutLnk = myAccountPage.isMyAccountVisible();
-		Assert.assertEquals(logoutLnk, true);
-		if (logoutLnk) {
+		boolean isLogoutLinkVisible = myAccountPage.isMyAccountVisible();
+		Assert.assertEquals(isLogoutLinkVisible, true);
+		if (isLogoutLinkVisible) {
 			logger.info("Login Success ");
 			Assert.assertTrue(true);
 		} else {
